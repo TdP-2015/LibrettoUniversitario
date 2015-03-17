@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="it.polito.tdp.libretto.LibrettoController">
+   <top>
+      <Label text="Libretto Universitario" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Data" />
+                  <Label text="Corso" GridPane.columnIndex="1" />
+                  <Label text="Voto" GridPane.columnIndex="2" />
+                  <TextField fx:id="txtCorso" prefColumnCount="25" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtVoto" prefColumnCount="4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <DatePicker fx:id="txtData" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <AnchorPane>
+               <children>
+                  <Button fx:id="btnInserisci" layoutX="470.0" mnemonicParsing="false" onAction="#doInserisci" text="Inserisci" AnchorPane.rightAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <HBox spacing="10.0">
+               <children>
+                  <Label text="Esami superati" />
+                  <TextField fx:id="txtEsami" editable="false" prefColumnCount="5" />
+                  <Label text="Media">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtMedia" editable="false" prefColumnCount="5" />
+               </children>
+            </HBox>
+            <Label />
+            <Button fx:id="btnVisuallizza" mnemonicParsing="false" onAction="#doVisualizza" text="Visualizza voti" />
+            <TextArea fx:id="txtResult" editable="false" maxHeight="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
